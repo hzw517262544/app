@@ -1,0 +1,16 @@
+{
+  "main.html": {
+    "resources": [
+      "setting.html"
+    ],
+    "refer": [
+      "setting.html"
+    ]
+  },
+  "login.html": {
+    "refer": [
+      "main.html",
+      "unlock.html"
+    ]
+  }
+}
