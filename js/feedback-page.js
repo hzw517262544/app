@@ -10,7 +10,8 @@
 		question: get('question'),
 		contact: get('contact'),
 		imageList: get('image-list'),
-		submit: get('submit')
+		submit: get('submit'),
+		cancle:get('cancle')
 	};
 	ui.clearForm = function() {
 		ui.question.value = '';
@@ -60,6 +61,7 @@
 		fileInput.addEventListener('change', function(event) {
 			var file = fileInput.files[0];
 			if (file) {
+				
 				var reader = new FileReader();
 				reader.onload = function() {
 					//处理 android 4.1 兼容问题
@@ -67,10 +69,12 @@
 					var dataUrl = 'data:image/png;base64,' + base64;
 					//
 					placeholder.style.backgroundImage = 'url(' + dataUrl + ')';
+					
 				}
 				reader.readAsDataURL(file);
 				placeholder.classList.remove('space');
 				ui.newPlaceholder();
+				
 			}
 		}, false);
 		placeholder.appendChild(closeButton);
@@ -99,9 +103,16 @@
 			mui.back();
 		});*/
 	}, false);
+	
+	ui.cancle.addEventListener('tap',function(event){
+		ui.clearForm();
+		mui.back();
+	}, false);
 })(mui, window, document, undefined);
 
 function submitQuestion(ui){
+	var fileIds = ui.getFileInputIdArray();
+	uploadByIds(fileIds);
 	plus.nativeUI.showWaiting();
 	mui.ajax($.i18n.prop('backer_url')+'/app/questionsSuggestions/save',{
 		data:{

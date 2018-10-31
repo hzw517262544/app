@@ -163,9 +163,17 @@
 					"fonts/mui.ttf",
 					"js/mui.min.js",
 					"js/app.js",
-					"setting.html"
+					"setting.html",
+					"tab-webview-subpage-about.html",
+					"about.html"
 				],
-				"refer": [],
+				"refer": [
+					"tab-webview-subpage-setting.html",
+					"tab-webview-subpage-chat.html",
+					"tab-webview-subpage-contact.html",
+					"contact.html",
+					"chat.html"
+				],
 				"priority": 1
 			},
 			"unlock.html": {
@@ -228,6 +236,13 @@
 					"main.html",
 					"reg.html"
 				],
+				"priority": 0
+			},
+			"contact.html": {
+				"resources": [
+					"/images/60x60.gif"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},

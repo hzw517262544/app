@@ -1,16 +1,33 @@
 {
-  "main.html": {
-    "resources": [
-      "setting.html"
-    ],
-    "refer": [
-      "setting.html"
-    ]
-  },
-  "login.html": {
-    "refer": [
-      "main.html",
-      "unlock.html"
-    ]
-  }
+	"main.html": {
+		"resources": [
+			"setting.html",
+			"tab-webview-subpage-about.html",
+			"about.html"
+		],
+		"refer": [
+			"setting.html",
+			"tab-webview-subpage-setting.html",
+			"tab-webview-subpage-chat.html",
+			"tab-webview-subpage-contact.html",
+			"tab-webview-subpage-about.html",
+			"contact.html",
+			"about.html",
+			"chat.html"
+		]
+	},
+	"login.html": {
+		"refer": [
+			"main.html",
+			"unlock.html",
+			"reg.html",
+			"forget_password.html"
+		],
+		"resources": []
+	},
+	"contact.html": {
+		"resources": [
+			"/images/60x60.gif"
+		]
+	}
 }

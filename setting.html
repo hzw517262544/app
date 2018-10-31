@@ -152,7 +152,7 @@
 		<!--单页面开始-->
 		<div id="setting" class="mui-page">
 			<!--页面标题栏开始-->
-			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav" hidden="hidden">
 				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
 					<span class="mui-icon mui-icon-left-nav"></span>
 				</button>
@@ -221,7 +221,7 @@
 		<div id="lock" class="mui-page">
 			<div class="mui-navbar-inner mui-bar mui-bar-nav">
 				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
-					<span class="mui-icon mui-icon-left-nav"></span>设置
+					<span class="mui-icon mui-icon-left-nav"></span>
 				</button>
 				<h1 class="mui-center mui-title">锁屏图案</h1>
 			</div>
@@ -244,7 +244,7 @@
 		<div id="feedback" class="mui-page feedback">
 			<div class="mui-navbar-inner mui-bar mui-bar-nav">
 				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
-					<span class="mui-icon mui-icon-left-nav"></span>设置
+					<span class="mui-icon mui-icon-left-nav"></span>
 				</button>
 				<h1 class="mui-center mui-title">问题反馈</h1>
 			</div>
@@ -261,6 +261,8 @@
 					<input maxlength="100" id='contact' type="text" class="mui-input-clear  contact" placeholder="(选填,方便我们联系你 )" />
 				</div>
 				<button id='submit' type="button" class="mui-btn mui-btn-green">提交</button>
+				<button id='cancle' type="button" class="mui-btn mui-btn-danger">取消</button>
+				
 			</div>
 			<p>此示例基于环信 “WebIM SDK” + 环信 “移动客服” 实现，在环信 “移动客服面板” 能够查阅反馈信息。</p>
 		</div>

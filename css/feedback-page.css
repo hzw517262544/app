@@ -17,7 +17,14 @@
 .feedback p {
 	padding: 10px 15px 0;
 }
-.feedback button#submit { 
+.feedback button#submit {
+	width: 90%;
+	height: 46px;
+	left: 50%;
+	-webkit-transform: translate(-50%);
+}
+.feedback button#cancle { 
+	margin-top: 5px;
 	width: 90%;
 	height: 46px;
 	left: 50%;

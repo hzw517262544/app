@@ -1,4 +1,6 @@
-mui.init();
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
 		 //初始化单页view
 		var viewApi = mui('#app').view({
 			defaultPage: '#setting'
