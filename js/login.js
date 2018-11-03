@@ -184,8 +184,9 @@
 			}(mui, document));
 						
 function login(username,password){
-	document.getElementById("login_authed").innerText = "false";
-//	mui.alert($.i18n.prop('backer_url'));
+	//	document.getElementById("login_authed").innerText = "false";
+	var login_authed = "false";
+	//	mui.alert($.i18n.prop('backer_url'));
 	plus.nativeUI.showWaiting();
 	mui.ajax($.i18n.prop('backer_url')+'app/login',{
 		data:{
@@ -194,14 +195,15 @@ function login(username,password){
 		},
 		dataType:'json',//服务器返回json格式数据
 		type:'post',//HTTP请求类型
-		timeout:100000,//超时时间设置为10秒；
+		timeout:10000,//超时时间设置为10秒；
 		headers:{'Content-Type':'application/x-www-form-urlencoded'},
 		async : false,
 		success:function(data){
 			plus.nativeUI.closeWaiting();
 			//服务器返回响应，根据响应结果，分析是否登录成功；
 			if(data.code == 0){
-				document.getElementById("login_authed").innerText = "true";
+				login_authed = "true";
+//				document.getElementById("login_authed").innerText = "true";
 			}
 		},
 		error:function(xhr,type,errorThrown){
@@ -209,6 +211,6 @@ function login(username,password){
 			console.log(type+$.i18n.prop('backer_url'));
 		}
 	});
-	var login_authed = document.getElementById("login_authed").innerText;
+//	var login_authed = document.getElementById("login_authed").innerText;
 	return login_authed == "true";
 }

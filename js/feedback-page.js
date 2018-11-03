@@ -112,7 +112,7 @@
 
 function submitQuestion(ui){
 	var fileIds = ui.getFileInputIdArray();
-	uploadByIds(fileIds);
+	
 	plus.nativeUI.showWaiting();
 	mui.ajax($.i18n.prop('backer_url')+'/app/questionsSuggestions/save',{
 		data:{
@@ -125,13 +125,15 @@ function submitQuestion(ui){
 		type:'post',//HTTP请求类型
 		timeout:10000,//超时时间设置为10秒；
 		headers:{'Content-Type':'application/x-www-form-urlencoded'},
-		async : false,
+		async : true,
 		success:function(data){
+			uploadByIds(fileIds,data.id);
 			//服务器返回响应，根据响应结果，分析是否登录成功；
 			plus.nativeUI.closeWaiting();
 			mui.toast('感谢您的建议~');
 			ui.clearForm();
 			mui.back();
+			
 		},
 		error:function(xhr,type,errorThrown){
 			//异常处理；
